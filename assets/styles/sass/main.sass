@@ -30,10 +30,16 @@ main
         margin: 10px
         box-shadow: 1px -1px 16px 1px #fefffd21       
     &__star--xs
+        width: 1px
+        height: 1px
         @include moving-up(90s, -500vh)
     &__star--sm
+        width: 3px
+        height: 3px
         @include moving-up(70s, -500vh)
     &__star--md
+        width: 6px
+        height: 6px        
         @include moving-up(50s, -500vh)
 
 .intro
@@ -65,11 +71,15 @@ main
         @include fadeIn()        
     &__words
         position: fixed
-        top: 5%
+        top: 2%
         color: white
         font-weight: 600
         text-align: center
-        padding: 20px
+        padding: 50px
+    &__words--fadeIn
+        @include fadeIn()        
+    &__words--fadeOut
+        @include fadeOut()
     &__star
         margin: 30px 0
         &__shape
@@ -84,6 +94,8 @@ main
     &__star--disappear
         @include disappearing(60s)
     &__input
+        position: fixed
+        bottom: 5%
         > input, > button
             color: gray
             border: none
@@ -108,7 +120,6 @@ main
     text-align: center
     padding: 20px
     opacity: 0
-    display: none
     &--fadeIn
         @include fadeIn()
     &--fadeOut

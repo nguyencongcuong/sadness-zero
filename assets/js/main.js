@@ -1,181 +1,145 @@
-//  TẠO CÁC VÌ SAO
-let stars = document.getElementById("bg-stars");
-let starSize = ["1px", "3px", "6px"];
-let starList = [];
-let starXs = [];
-let starSm = [];
-let starMd = [];
-
-creatingStars(stars, 150);
-starList = document.getElementsByClassName("space__star");
-positioningStars(starList);
-
-console.log(starXs);
-console.log(starSm);
-console.log(starMd);
-
-function creatingStars(parentElement, num) {
-    for (let i = 0; i < num; i++) {
-
-        const span = document.createElement("span");
-        let starWidth;
-        let starHeight;
-        let randomSize = getRandomInt(4, 1);
-        span.className = "space__star";
-        switch (randomSize) {
-            case 1:
-                starWidth = starSize[0];
-                starHeight = starSize[0];
-                span.classList.add("space__star--xs");
-                starXs.push(span);
-                break;
-            case 2:
-                starWidth = starSize[1];
-                starHeight = starSize[1];
-                span.classList.add("space__star--sm");
-                starSm.push(span);
-                break;
-            case 3:
-                starWidth = starSize[2];
-                starHeight = starSize[2];
-                span.classList.add("space__star--md");
-                starMd.push(span);
-                break;
-            default:
-                break;
-        }
-        span.style.width = starWidth;
-        span.style.height = starHeight;
-        parentElement.appendChild(span);
-    }
-}
-
-function positioningStars(array) {
-    for (let i = 0; i < array.length; i++) {
-        let randomTop = getRandomInt(501, 100);
-        let randomLeft = getRandomInt(101, 0);
-        array[i].style.top = `${randomTop}%`;
-        array[i].style.left = `${randomLeft}%`;
-    }
-}
-
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-}
-
-/*  - Nhập input text
-    - Lấy giá trị nhập đưa vào vì sao
-    - Chờ 3s
-    - Flow 1: Vì sao bắt đầu nhỏ dần trong 60s
-    - Flow 2: 13 texts lần lượt thay nhau hiển thị đến hết 60s
-    - Flow 3: Bắt đầu phát nhạc
-*/
-
+// Global Declaration
 const delay = ms => new Promise(res => setTimeout(res, ms));
 let section1 = getID("section1");
 let section2 = getID("section2");
 let section3 = getID("section3");
 
-let sharingField = getID("sharingField");
+// Default Display
+section1.style.display = "none";
+section2.style.display = "none";
+section3.style.display = "none";
 
-// SECTION 1
-sharingField.style.display = "none";
-let sectionFade = async () => {
-    await delay(5000);
-    section1.classList.remove("intro--fadeIn");
-    section1.classList.add("intro--fadeOut");
-    await delay(5000);
-    sharingField.style.display = "initial";
-    section2.style.display = "flex";
-    section2.classList.add("healing--fadeIn");
-}
-sectionFade();
+// Create & animate a space of stars
+positioningStars(creatingStars(150));
 
-// SECTION 2
-let healingWords = getID("healingWords");
-let spaceStar = getID("spaceStar");
-let spaceStarShape = getID("spaceStarShape");
-let thoughts = getID("thoughts");
+// Show & hide #section1 (intro)
+flowingSection1();
 
-let inputValue = "";
-let submitBtn = getID("submitBtn");
-let input = getID("thoughtsInput");
-let healingWordsArr = [
-    "bạn hãy thư giãn và thả lỏng cơ thể",
-    "hít thật sâu...",
-    "... rồi sau đó thở ra",
-    "khi bạn ổn, mọi thứ xung quanh bạn sẽ ổn...",
-    "... bạn sẽ nhận ra rằng cuộc sống này đẹp hơn bạn từng nghĩ",
-    "và luôn có những niềm vui, những điều tốt đẹp đợi chờ bạn phía trước",
-    "vũ trụ của chúng ta rộng hơn 93 tỷ năm ánh sáng",
-    "bầu trời rộng lớn mà bạn nhìn thấy mỗi ngày thực ra lại rất nhỏ bé",
-    "mặt trời nhỏ hơn thế",
-    "và trái đất lại nhỏ nhỏ hơn thế nữa",
-    "so với thiên hà, thành phố của chúng ta chỉ như 1 hạt bụi",
-    "còn chúng ta chỉ cỡ như 1 tế bào",
-    "giờ thì bạn thấy suy nghĩ tiêu cực của mình nhỏ bé cỡ nào rồi chứ?",
-    "nó có thể biến mất hoàn toàn trong vũ trụ một cách dễ dàng",
-    "vậy đó, hãy tích cực lên vào sống tốt hơn mỗi ngày bạn nhé!"
-]
+// After click #submitBtn
+document.getElementById("submitBtn").addEventListener("click", function(){
+    // Show & hide #section2 (healing)
+    flowingSection2();
+    // Show & hide #section3 (Outro)
+    flowingSection3();
+}, false);
 
-submitBtn.addEventListener("click", function () {
-    inputValue = input.value;
-    thoughts.innerText = inputValue;
-    sharingField.style.display = "none";
-    
-    playLoopAudio();
+// FUNCTIONS
 
-    let timeToWait = 60000 / healingWordsArr.length;
+function flowingSection3() {
+    // Execute in order
     let wait = async () => {
-
-        spaceStar.classList.add("healing__star--disappear");
-
-        for (let i = 0; i < healingWordsArr.length; i++) {
-            healingWords.innerText = healingWordsArr[i];
-            await delay(timeToWait);
-        }
-        await delay(3000);
-        section2.classList.add("healing--fadeOut");
-        await delay(3000);
+        await delay(65000); // Wait for the flow of #section2 to finish
         section3.style.display = "block";
         section3.classList.add("outro--fadeIn");
         await delay(10000);
         section3.classList.add("outro--fadeOut");
-        await delay(3000);
-        section1.style.display = "none";
-        section2.style.display = "none";
+        await delay(6000);
         section3.style.display = "none";
     }
     wait();
-}, false);
-
-//  HÀM:
-function getID(arg) {
-    return document.getElementById(arg);
 }
 
-//  HÀM PLAY & LOOP AUDIO
+function flowingSection2() {
+    
+    // Variables
+    let healingWords = getID("healingWords");
+    let spaceStar = getID("spaceStar");
+    let thoughts = getID("thoughts");
+    let sharingField = getID("sharingField");
+    let input = getID("thoughtsInput");
+    let inputValue = "";
+    let healingWordList = [
+        "bạn hãy thư giãn và thả lỏng cơ thể",
+        "hít thật sâu...",
+        "... rồi sau đó thở ra",
+        "khi bạn ổn, mọi thứ xung quanh bạn sẽ ổn...",
+        "... bạn sẽ nhận ra rằng cuộc sống này đẹp hơn bạn từng nghĩ",
+        "và luôn có những niềm vui, những điều tốt đẹp đợi chờ bạn phía trước",
+        "vũ trụ của chúng ta rộng hơn 93 tỷ năm ánh sáng",
+        "bầu trời rộng lớn mà bạn nhìn thấy mỗi ngày thực ra lại rất nhỏ bé",
+        "mặt trời nhỏ hơn thế",
+        "và trái đất lại nhỏ nhỏ hơn thế nữa",
+        "so với thiên hà, thành phố của chúng ta chỉ như 1 hạt bụi",
+        "còn chúng ta chỉ cỡ như 1 tế bào",
+        "giờ thì bạn thấy suy nghĩ tiêu cực của mình nhỏ bé cỡ nào rồi chứ?",
+        "nó có thể biến mất hoàn toàn trong vũ trụ một cách dễ dàng",
+        "vậy đó, hãy tích cực lên vào sống tốt hơn mỗi ngày bạn nhé!"
+    ]
+    
+    // Play background music
+    playLoopAudio();
+    
+    // Hide #sharingField
+    sharingField.style.display = "none";
+
+    // Get the input value & assign it to #thoughts
+    inputValue = input.value;
+    thoughts.innerText = inputValue;
+
+    // Based on healingWordList.length, caculate showing time for each healing words in 60s
+    let timeToWait = 60000 / healingWordList.length;
+    
+    // Execute in order
+    let wait = async () => {
+        
+        // Make #spaceStar disappear gradually in 60s
+        spaceStar.classList.add("healing__star--disappear");
+
+        // While the star is disappearing, displaying healing words in order
+        await delay(2000);
+        for (let i = 0; i < healingWordList.length; i++) {
+            healingWords.innerText = healingWordList[i];
+            await delay(timeToWait); // how long each sentence displays on screen
+            if (i == healingWordList.length - 1) {
+                healingWords.classList.add("healing__words--fadeOut");
+            }
+        }
+
+        // After 3s, fading out #section 2
+        await delay(3000);
+        section2.style.display = "none";
+    }
+
+    wait();
+
+}
+
+function flowingSection1() {
+    section1.style.display = "unset";
+    let wait = async () => {
+        await delay(5000);
+        section1.classList.remove("intro--fadeIn");
+        section1.classList.add("intro--fadeOut");
+        await delay(5000);
+        section1.style.display = "none";
+        section2.style.display = "flex";
+        section2.classList.add("healing--fadeIn");
+    }
+    wait();
+}
 
 function playLoopAudio() {
     
+    // Variables
     let music;
-    let audioName;
     let randomAudioIndex;
+    let audioName = getID("outroAudioName");
 
+    // Fetch audios from API
     fetch("./bg-music.json")
     .then(function (response) {
         return response.json();
     })
-    .then(function (data) {
-        let audioAPILength = data.length;
-        randomAudioIndex = getRandomInt(audioAPILength, 0);
-        music = new Audio(data[randomAudioIndex].url);
+    .then(function (audioList) {
 
-        let audioName = getID("outroAudioName");
-        audioName.innerText = `${data[randomAudioIndex].name}`;
-
+        // Choose an random audio file
+        randomAudioIndex = randomRange(audioList.length - 1, 0);
+        music = new Audio(audioList[randomAudioIndex].url);
+        
+        // Assign the audio name to HTML element
+        audioName.innerText = `${audioList[randomAudioIndex].name}`;
+        
+        // Loop audio
         if (typeof music.loop == 'boolean') {
             music.loop = true;
         } else {
@@ -184,10 +148,66 @@ function playLoopAudio() {
                 this.play();
             }, false);
         }
-    
+        
+        // Play audio
         music.play();
-
-        console.log("You'are listening to " + data[randomAudioIndex].name + " by " + data[randomAudioIndex].author);
-
+        console.log("Bạn đang nghe bản nhạc " + audioList[randomAudioIndex].name + " từ " + audioList[randomAudioIndex].author);
     });    
+}
+
+function creatingStars(num) {
+
+    // Variables
+    let stars = document.getElementById("bg-stars");
+    let star;
+    let starList = [];
+    let size;
+
+    // Creating num star elements: <span class="space__star space__star--xs/space__star--sm/space__star--md"></span>
+    for (let i = 0; i < num; i++) {
+        star = document.createElement("span");
+        size = randomRange(3, 1);
+        star.className = "space__star";
+        starList.push(star);
+        switch (size) {
+            case 1:
+                star.classList.add("space__star--xs");
+                break;
+            case 2:
+                star.classList.add("space__star--sm");
+                break;
+            case 3:
+                star.classList.add("space__star--md");
+                break;
+            default:
+                break;
+        }
+        stars.appendChild(star);
+    }
+
+    // Return an array of all stars created
+    return starList;
+}
+
+function positioningStars(starList) {
+
+    for (let i = 0; i < starList.length; i++) {
+
+        let top = randomRange(500, 100);
+        let left = randomRange(100, 0);
+
+        starList[i].style.top = `${top}%`;
+        starList[i].style.left = `${left}%`;
+    }
+
+}
+
+function randomRange(max, min) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function getID(arg) {
+    return document.getElementById(arg);
 }
