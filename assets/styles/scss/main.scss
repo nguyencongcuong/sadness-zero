@@ -1,0 +1,155 @@
+@use "helpers"as *;
+@use "base"as *;
+@use "layout"as *;
+@use "components"as *;
+@use "mixins"as *;
+
+// Layout
+body {
+  color: white;
+  background: #262629;
+  height: 100vh;
+  overflow: hidden;
+
+  #main {
+    @include flex-center(column);
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+
+    #section1,
+    #section2,
+    #section3 {
+      max-width: 600px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #section1 {
+      position: absolute;
+    }
+
+    #section2 {
+      @include flex-center(column);
+      position: absolute;
+    }
+  }
+}
+
+// Section 1
+#section1 {
+  .app-name {
+    font-size: 100%;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .app-desc {
+    font-size: 60%;
+    text-align: center;
+  }
+}
+
+// Section 2
+#section2 {
+  opacity: 0;
+  display: none;
+
+  #healingWords {
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    padding: 20px;
+  }
+
+  #spaceStar {
+    margin: 30px 0;
+
+    #spaceStarShape {
+      @include flex-center(row);
+      @include starShape();
+
+      #thoughts {
+        color: hsl(0, 0%, 20%);
+        font-size: 0.5rem;
+        text-align: center;
+        padding: 20px;
+      }
+    }
+  }
+
+  #sharingField {
+    input[type="text"] {
+      border: none;
+      border-radius: 10px 10px 0 0;
+      font-weight: 600;
+      outline: none;
+      opacity: 0.8;
+      padding: 20px;
+      width: 100%;
+    }
+
+    input::placeholder {
+      color: black;
+      font-weight: 600;
+    }
+
+    button[type="submit"] {
+      border-radius: 0 0 10px 10px;
+      text-transform: uppercase;
+      width: 100%;
+    }
+  }
+}
+
+// Section 3
+#section3 {
+  opacity: 0;
+  display: none;
+}
+
+// Star Background
+#stars {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  .star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    margin: 10px;
+    box-shadow: 1px -1px 16px 1px #fefffd21;
+  }
+}
+
+// Star's Animations
+.star.starXs {
+  @include moving-up(90s, -500vh);
+}
+
+.star.starSm {
+  @include moving-up(70s, -500vh);
+}
+
+.star.starMd {
+  @include moving-up(50s, -500vh);
+}
+
+
+// Utility classes
+.fadeIn {
+  @include fadeIn();
+}
+
+.fadeOut {
+  @include fadeOut();
+}
+
+.disappearing {
+  @include disappearing(60s);
+}
