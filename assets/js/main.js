@@ -3,6 +3,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 let section1 = getID("section1");
 let section2 = getID("section2");
 let section3 = getID("section3");
+let sadThings = [];
 
 // Default Display
 section1.style.display = "none";
@@ -20,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("submitBtn").addEventListener("click", function(event){
         event.preventDefault();
         // Save input value to local storage
-        let sads = [];
         const addSad = () => {
             
             let sad = {
@@ -28,13 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 text: document.getElementById("thoughtsInput").value
             }
             
-            sads.push(sad);
+            sadThings.push(sad);
             document.forms[0].reset();
 
-            console.warn("added", {sads});
+            console.warn("added", {sadThings});
             
             // Saving to local storage
-            localStorage.setItem("MySadList", JSON.stringify(sad));
+            localStorage.setItem("MySadList", JSON.stringify(sadThings));
         }
         addSad();
         
