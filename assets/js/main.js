@@ -11,7 +11,7 @@ section2.style.display = "none";
 section3.style.display = "none";
 
 // Create & animate a space of stars
-positioningStars(creatingStars(500));
+positioningStars(creatingStars(300));
 
 // Generate Planet name
 fetch("./constellation.json")
@@ -21,7 +21,7 @@ fetch("./constellation.json")
 .then(function (planetList) {
     let randomPlanetIndex = randomRange(planetList.length - 1, 0);
     let submitBtn = getID("submitBtn");
-    submitBtn.innerHTML = `Đặt lên chòm sao<br><b>${planetList[randomPlanetIndex].vietnamese} (${planetList[randomPlanetIndex].latin})</b>`;
+    submitBtn.innerHTML = `Đặt lên chòm sao ${planetList[randomPlanetIndex].vietnamese} (${planetList[randomPlanetIndex].latin})`;
 });
 
 
