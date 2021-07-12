@@ -16,12 +16,37 @@ positioningStars(creatingStars(150));
 flowingSection1();
 
 // After click #submitBtn
-document.getElementById("submitBtn").addEventListener("click", function(){
-    // Show & hide #section2 (healing)
-    flowingSection2();
-    // Show & hide #section3 (Outro)
-    flowingSection3();
-}, false);
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("submitBtn").addEventListener("click", function(event){
+        event.preventDefault();
+        // Save input value to local storage
+        let sads = [];
+        const addSad = () => {
+            
+            let sad = {
+                time: Date.now(),
+                text: document.getElementById("thoughtsInput").value
+            }
+            
+            sads.push(sad);
+            document.forms[0].reset();
+
+            console.warn("added", {sads});
+            
+            // Saving to local storage
+            localStorage.setItem("MySadList", JSON.stringify(sad));
+        }
+        addSad();
+        
+        // Show & hide #section2 (healing)
+        flowingSection2();
+
+        // Show & hide #section3 (Outro)
+        flowingSection3();
+
+    }, false);
+});
+
 
 // FUNCTIONS
 
