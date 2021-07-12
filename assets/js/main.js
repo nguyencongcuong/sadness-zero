@@ -83,10 +83,10 @@ let sharingField = getID("sharingField");
 // SECTION 1
 sharingField.style.display = "none";
 let sectionFade = async () => {
-    await delay(3000);
+    await delay(5000);
     section1.classList.remove("intro--fadeIn");
     section1.classList.add("intro--fadeOut");
-    await delay(3000);
+    await delay(5000);
     sharingField.style.display = "initial";
     section2.style.display = "flex";
     section2.classList.add("healing--fadeIn");
@@ -136,6 +136,7 @@ submitBtn.addEventListener("click", function () {
             healingWords.innerText = healingWordsArr[i];
             await delay(timeToWait);
         }
+        await delay(3000);
         section2.classList.add("healing--fadeOut");
         await delay(3000);
         section3.style.display = "block";
