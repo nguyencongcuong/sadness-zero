@@ -1,5 +1,5 @@
 //  TẠO CÁC VÌ SAO
-let stars = document.getElementById("stars");
+let stars = document.getElementById("bg-stars");
 let starSize = ["1px", "3px", "6px"];
 let starList = [];
 let starXs = [];
@@ -7,7 +7,7 @@ let starSm = [];
 let starMd = [];
 
 creatingStars(stars, 150);
-starList = document.getElementsByClassName("star");
+starList = document.getElementsByClassName("space__star");
 positioningStars(starList);
 
 console.log(starXs);
@@ -21,24 +21,24 @@ function creatingStars(parentElement, num) {
         let starWidth;
         let starHeight;
         let randomSize = getRandomInt(4, 1);
-        span.className = "star";
+        span.className = "space__star";
         switch (randomSize) {
             case 1:
                 starWidth = starSize[0];
                 starHeight = starSize[0];
-                span.classList.add("starXs");
+                span.classList.add("space__star--xs");
                 starXs.push(span);
                 break;
             case 2:
                 starWidth = starSize[1];
                 starHeight = starSize[1];
-                span.classList.add("starSm");
+                span.classList.add("space__star--sm");
                 starSm.push(span);
                 break;
             case 3:
                 starWidth = starSize[2];
                 starHeight = starSize[2];
-                span.classList.add("starMd");
+                span.classList.add("space__star--md");
                 starMd.push(span);
                 break;
             default:
@@ -49,14 +49,16 @@ function creatingStars(parentElement, num) {
         parentElement.appendChild(span);
     }
 }
+
 function positioningStars(array) {
     for (let i = 0; i < array.length; i++) {
-        let randomTop = getRandomInt(501,100);
-        let randomLeft = getRandomInt(101,0);
+        let randomTop = getRandomInt(501, 100);
+        let randomLeft = getRandomInt(101, 0);
         array[i].style.top = `${randomTop}%`;
         array[i].style.left = `${randomLeft}%`;
     }
 }
+
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -80,20 +82,21 @@ let sharingField = getID("sharingField");
 
 // SECTION 1
 sharingField.style.display = "none";
-let sectionFade = async () => {   
-    await delay(5000);
-    section1.classList.remove("fadeIn");
-    section1.classList.add("fadeOut");
-    await delay(5000);
+let sectionFade = async () => {
+    await delay(3000);
+    section1.classList.remove("intro--fadeIn");
+    section1.classList.add("intro--fadeOut");
+    await delay(3000);
     sharingField.style.display = "initial";
     section2.style.display = "flex";
-    section2.classList.add("fadeIn");
+    section2.classList.add("healing--fadeIn");
 }
 sectionFade();
 
 // SECTION 2
 let healingWords = getID("healingWords");
 let spaceStar = getID("spaceStar");
+let spaceStarShape = getID("spaceStarShape");
 let thoughts = getID("thoughts")
 
 let inputValue = "";
@@ -121,28 +124,29 @@ submitBtn.addEventListener("click", function () {
     inputValue = input.value;
     thoughts.innerText = inputValue;
     sharingField.style.display = "none";
-    spaceStar.classList.add("disappearing");
-
+    
     playLoopAudio();
 
     let timeToWait = 60000 / healingWordsArr.length;
     let wait = async () => {
 
+        spaceStar.classList.add("healing__star--disappear");
+
         for (let i = 0; i < healingWordsArr.length; i++) {
             healingWords.innerText = healingWordsArr[i];
             await delay(timeToWait);
         }
-        section2.classList.add("fadeOut");
+        section2.classList.add("healing--fadeOut");
         await delay(3000);
         section3.style.display = "block";
-        section3.classList.add("fadeIn");
-        await delay(5000);
-        section3.classList.add("fadeOut");
-        await delay(5000);
+        section3.classList.add("outro--fadeIn");
+        await delay(10000);
+        section3.classList.add("outro--fadeOut");
+        await delay(3000);
         section1.style.display = "none";
         section2.style.display = "none";
         section3.style.display = "none";
-    }    
+    }
     wait();
 }, false);
 
@@ -151,16 +155,37 @@ function getID(arg) {
     return document.getElementById(arg);
 }
 
-//  HÀM PLAY & LOOP AUDIO 
+//  HÀM PLAY & LOOP AUDIO
+
 function playLoopAudio() {
-    let music = new Audio("./assets/music/beautiful-life-pixabay.mp3");
-    if (typeof music.loop == 'boolean') {
-        music.loop = true;
-    } else {
-        music.addEventListener('ended', function() {
-            this.currentTime = 0;
-            this.play();
-        }, false);
-    }
-    music.play(); 
+    
+    let music;
+    let audioName;
+    let randomAudioIndex;
+
+    fetch("./bg-music.json")
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        randomAudioIndex = getRandomInt(2, 0);
+        music = new Audio(data[randomAudioIndex].url);
+
+        let audioName = getID("outroAudioName");
+        audioName.innerText = `${data[randomAudioIndex].name}`;
+
+        if (typeof music.loop == 'boolean') {
+            music.loop = true;
+        } else {
+            music.addEventListener('ended', function () {
+                this.currentTime = 0;
+                this.play();
+            }, false);
+        }
+    
+        music.play();
+
+        console.log("You'are listening to " + data[randomAudioIndex].name + " by " + data[randomAudioIndex].author);
+
+    });    
 }

@@ -1,0 +1,30 @@
+@use "sass:color"
+@use "sass:math"
+
+//  1. VARIABLES
+//  60-30-10 Rules
+//  60% Primary color, 30% Secondary color, 10% Accent color
+$primaryColor: hsl(91, 26%, 45%)
+$secondaryColor: color.change($primaryColor, $lightness: 95%)
+$accentColor: color.adjust($primaryColor, $hue: 180)
+
+$space1: 1rem
+$space2: 2rem
+$space3: 3rem
+$space4: 4rem
+$space5: 5rem
+
+$breakpointXs: 320px   // Extra small devices (phones, 320px and down)
+$breakpointSm: 640px   // Small devices (portrait tablets and large phones, 600px and up)
+$breakpointMd: 768px   // Medium devices (landscape tablets, 768px and up)
+$breakpointLg: 1024px  // Large devices (laptops/desktops, 992px and up)
+$breakpointXl: 1280px  // Extra large devices (large laptops and desktops, 1200px and up)
+
+$btn--primary: #0077b6
+$btn--secondary: #adb5bd
+$btn--success: #73a942
+$btn--danger: #c1121f
+$btn--warning: #ffba08
+$btn--info: #83c5be
+$btn--dark: #3f4238
+$btn--light: #f5f3f4

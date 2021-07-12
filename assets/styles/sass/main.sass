@@ -1,0 +1,115 @@
+@use "helpers"as *
+@use "base"as *
+@use "layout"as *
+@use "components"as *
+@use "mixins"as *
+
+body
+    color: white
+    background: #262629
+    height: 100vh
+    overflow: hidden
+main
+    @include flex-center(column)
+    position: relative
+    width: 100vw
+    height: 100vh
+
+.space
+    object-fit: cover
+    width: 100vw
+    height: 100vh
+    position: fixed
+    top: 0
+    left: 0
+    z-index: -1
+    &__star
+        position: absolute
+        background: white
+        border-radius: 50%
+        margin: 10px
+        box-shadow: 1px -1px 16px 1px #fefffd21       
+    &__star--xs
+        @include moving-up(90s, -500vh)
+    &__star--sm
+        @include moving-up(70s, -500vh)
+    &__star--md
+        @include moving-up(50s, -500vh)
+
+.intro
+    position: absolute
+    max-width: 600px
+    text-align: center
+    padding: 20px
+    &__name
+        font-size: 100%
+        text-align: center
+        text-transform: uppercase
+    &__desc
+        font-size: 60%
+        text-align: center
+    &--fadeIn
+        @include fadeIn()
+    &--fadeOut
+        @include fadeOut()        
+
+.healing
+    max-width: 600px
+    text-align: center
+    padding: 20px    
+    opacity: 0
+    display: none
+    @include flex-center(column)
+    position: absolute
+    &--fadeIn
+        @include fadeIn()        
+    &__words
+        position: fixed
+        top: 5%
+        color: white
+        font-weight: 600
+        text-align: center
+        padding: 20px
+    &__star
+        margin: 30px 0
+        &__shape
+            @include flex-center(row)
+            @include starShape()
+            .sadly-words
+                color: hsl(0, 0%, 20%)
+                font-size: 0.5rem
+                text-align: center
+                padding: 20px
+            
+    &__star--disappear
+        @include disappearing(60s)
+    &__input
+        > input, > button
+            color: gray
+            border: none
+            font-weight: 600
+            outline: none
+            opacity: 0.8
+            padding: 20px
+            text-align: center
+            width: 100%
+        &__text
+            border-radius: 10px 10px 0 0
+        &__submit
+            cursor: pointer
+            border-radius: 0 0 10px 10px
+            text-transform: uppercase
+            transition: opacity 1s ease-in-out 0s
+            &:hover
+                opacity: 1
+
+.outro
+    max-width: 600px
+    text-align: center
+    padding: 20px
+    opacity: 0
+    display: none
+    &--fadeIn
+        @include fadeIn()
+    &--fadeOut
+        @include fadeOut()

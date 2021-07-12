@@ -1,0 +1,40 @@
+@use "helpers" as *
+
+// Work with widths and heights easier, Avoid unwanted gaps in my design
+*,
+*::before,
+*::after
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+// Consistent fonts across your UI
+body,
+input,
+button,
+select,
+textarea
+    font-family: inherit
+
+// Typography
+html
+    font: 400 18px/1.8 'Mali', cursive
+    @media (min-width: $breakpointXs)
+        font-size: 20px
+    @media (min-width: $breakpointSm)
+        font-size: 22px
+    @media (min-width: $breakpointMd)
+        font-size: 24px
+    @media (min-width: $breakpointLg)
+        font-size: 26px
+    h1
+        font-size: 1.6rem
+    h2
+        font-size: 1.5rem
+    h3
+        font-size: 1.4rem
+    p
+        margin-bottom: 1rem
+    a
+        color: white
+        text-decoration: none
