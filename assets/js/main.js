@@ -11,7 +11,7 @@ section2.style.display = "none";
 section3.style.display = "none";
 
 // Create & animate a space of stars
-positioningStars(creatingStars(150));
+positioningStars(creatingStars(500));
 
 // Show & hide #section1 (intro)
 flowingSection1();
