@@ -1,180 +1,30 @@
-/*  1. Variables
-    2. Mixins
-    3. Functions
-    4. Utility Classes
- */
+@use "sass:color";
+@use "sass:math";
 
- @use "sass:color";
- @use "sass:math"; 
- 
- //  1. VARIABLES
- //  60-30-10 Rules
- //  60% Primary color, 30% Secondary color, 10% Accent color
- $primaryColor: hsl(91, 26%, 45%);
- $secondaryColor: color.change($primaryColor, $lightness: 95%);
- $accentColor: color.adjust($primaryColor, $hue: 180);
- 
- $space1: 1rem;
- $space2: 2rem;
- $space3: 3rem;
- $space4: 4rem;
- $space5: 5rem;
- 
- $breakpointXs: 320px;   // Extra small devices (phones, 320px and down)
- $breakpointSm: 640px;   // Small devices (portrait tablets and large phones, 600px and up)
- $breakpointMd: 768px;   // Medium devices (landscape tablets, 768px and up)
- $breakpointLg: 1024px;  // Large devices (laptops/desktops, 992px and up)
- $breakpointXl: 1280px;  // Extra large devices (large laptops and desktops, 1200px and up)
- 
- $btn--primary: #0077b6;
- $btn--secondary: #adb5bd;
- $btn--success: #73a942;
- $btn--danger: #c1121f;
- $btn--warning: #ffba08;
- $btn--info: #83c5be;
- $btn--dark: #3f4238;
- $btn--light: #f5f3f4;
- 
- //  2. MIXINS
- /*  Enable scroll on overflow, especially helpful when styling <pre> <code>
-     Make scrollbars (x, y) invisible
- */
- 
- @mixin removeScrollbar() {
-     &::-webkit-scrollbar {
-         width: 0;  /* Remove scrollbar space */
-         background: transparent;  /* Optional: just make scrollbar invisible */
-     }
-     /* Optional: show position indicator in blue */
-     &::-webkit-scrollbar-thumb {
-         background: #516c86;
-     }
- }
- 
- /*  Make Elements Only Visible to a Screen Reader by Using Custom CSS
-     Notes: The following CSS approaches will NOT do the same thing::after
-     - display: none; or visibility: hidden; hides content for everyone, including screen reader users.
-     - Zero values for pixel sizes, such as width: 0px; height: 0px removes that element from the flow of your document, meaning screen readers will ignore it.
-     
-     How to use:
-     - Apply it to any element you want to make only visible to a screen reader
-     */
- @mixin sr-only {
-     position: absolute;
-     left: -10000px;
-     width: 1px;
-     height: 1px;
-     top: auto;
-     overflow: hidden;    
- }
- 
- /*  Caculate Aspect Ratio automatically for responsive web design
-    
-     How to use:
-     <div class="ratio">
-         <div class="outer">
-             <div class="inner">
-             </div>
-         </div>
-     </div>
- 
- */
- @mixin ratio($ratioY, $ratioX) {
-     width: 100%;
-     height: auto;
-     .outer {
-         position: relative;
-         &:before {
-           display: block;
-           content: "";
-           width: 100%;
-           padding-top: math.div($ratioY,$ratioX) * 100%;
-         }
-         > .inner {
-           position: absolute;
-           top: 0;
-           right: 0;
-           bottom: 0;
-           left: 0;
-         }
-     }
- }
- 
- 
- /*  Faded Animation
- 
- */
- @mixin faded() {
-     animation: faded 1s ease-in-out 0s inherit fill-mode;
- 
-     @keyframes faded {
-         0% {
-             opacity: 0.5;
-         }
-         100% {
-             opacity: 1;
-         }
-     }
- }
- 
- @mixin flex-container($direction, $justify-content, $align-items, $align-content) {
-     display: flex;
-     flex-flow: $direction wrap;
-     justify-content: $justify-content;
-     align-items: $align-items;
-     align-content: $align-content;
- }
- @mixin flex-item($grow, $shrink, $basis, $justify-self, $align-self) {
-     flex: $grow $shrink $basis;
-     justify-self: $justify-self;
-     align-self: $align-self;
- }
- @mixin onHover() {
-     transition: all 0.5s ease-in-out 0s;
-     opacity: 0.7;
-     &:hover {
-         opacity: 1;
-     }
- }
- 
- //  3. FUNCTIONS
- 
- //  4. UTILITY CLASSES
- // RESPONSIVE IFRAME
- .iframe-wrapper {
-     position: relative;
-     overflow: hidden;
-     width: 100%;
-     padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */      
-     .responsive-iframe {
-         position: absolute;
-         top: 0;
-         left: 0;
-         bottom: 0;
-         right: 0;
-         width: 100%;
-         height: 100%;            
-     }
- }
- 
- // STICKY HEADER ON SCROLL
- .sticky {
-     position: fixed;
-     top: 0;
-     left: 0;
-     padding: 0 20px;
-     width: 100%;
-     z-index: 1;    
- }
- // window.onscroll = function() {myFunction()};
- 
- // var header = document.getElementById("navigation");
- // var sticky = header.offsetTop;
- 
- // function myFunction() {
- //   if (window.pageYOffset > sticky) {
- //     header.classList.add("sticky");
- //   } else {
- //     header.classList.remove("sticky");
- //   }
- // }
+//  1. VARIABLES
+//  60-30-10 Rules
+//  60% Primary color, 30% Secondary color, 10% Accent color
+$primaryColor: hsl(91, 26%, 45%);
+$secondaryColor: color.change($primaryColor, $lightness: 95%);
+$accentColor: color.adjust($primaryColor, $hue: 180);
+
+$space1: 1rem;
+$space2: 2rem;
+$space3: 3rem;
+$space4: 4rem;
+$space5: 5rem;
+
+$breakpointXs: 320px;   // Extra small devices (phones, 320px and down)
+$breakpointSm: 640px;   // Small devices (portrait tablets and large phones, 600px and up)
+$breakpointMd: 768px;   // Medium devices (landscape tablets, 768px and up)
+$breakpointLg: 1024px;  // Large devices (laptops/desktops, 992px and up)
+$breakpointXl: 1280px;  // Extra large devices (large laptops and desktops, 1200px and up)
+
+$btn--primary: #0077b6;
+$btn--secondary: #adb5bd;
+$btn--success: #73a942;
+$btn--danger: #c1121f;
+$btn--warning: #ffba08;
+$btn--info: #83c5be;
+$btn--dark: #3f4238;
+$btn--light: #f5f3f4;

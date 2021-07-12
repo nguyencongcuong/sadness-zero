@@ -1,62 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
-/*  1. Variables
-    2. Mixins
-    3. Functions
-    4. Utility Classes
- */
-/*  Enable scroll on overflow, especially helpful when styling <pre> <code>
-    Make scrollbars (x, y) invisible
-*/
-/*  Make Elements Only Visible to a Screen Reader by Using Custom CSS
-    Notes: The following CSS approaches will NOT do the same thing::after
-    - display: none; or visibility: hidden; hides content for everyone, including screen reader users.
-    - Zero values for pixel sizes, such as width: 0px; height: 0px removes that element from the flow of your document, meaning screen readers will ignore it.
-
-    How to use:
-    - Apply it to any element you want to make only visible to a screen reader
-    */
-/*  Caculate Aspect Ratio automatically for responsive web design
-
-    How to use:
-    <div class="ratio">
-        <div class="outer">
-            <div class="inner">
-            </div>
-        </div>
-    </div>
-
-*/
-/*  Faded Animation
-
-*/
-.iframe-wrapper {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  padding-top: 56.25%;
-  /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-}
-.iframe-wrapper .responsive-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 0 20px;
-  width: 100%;
-  z-index: 1;
-}
-
 *,
 *::before,
 *::after {
@@ -267,7 +210,7 @@ body {
   height: 100vh;
   overflow: hidden;
 }
-body #main {
+body main {
   display: flex;
   flex-flow: column wrap;
   place-content: center;
@@ -276,17 +219,17 @@ body #main {
   width: 100vw;
   height: 100vh;
 }
-body #main #section1,
-body #main #section2,
-body #main #section3 {
+body main #section1,
+body main #section2,
+body main #section3 {
   max-width: 600px;
   text-align: center;
   padding: 20px;
 }
-body #main #section1 {
+body main #section1 {
   position: absolute;
 }
-body #main #section2 {
+body main #section2 {
   display: flex;
   flex-flow: column wrap;
   place-content: center;

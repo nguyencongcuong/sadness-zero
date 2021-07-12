@@ -1,67 +1,86 @@
 @use "helpers"as *;
 
 @mixin flex-center($direction) {
-    display: flex;
-    flex-flow: $direction wrap;
-    place-content: center;
-    place-items: center;
+  display: flex;
+  flex-flow: $direction wrap;
+  place-content: center;
+  place-items: center;
 }
-@mixin starShape() {
-    width: 150px;
-    height: 150px;
-    background: hsl(0, 0%, 81%);
-    border-radius: 50%;
-    box-shadow: 0px 0px 50px #a0a098;
 
-    @media (min-width: $breakpointMd) {
-      width: 200px;
-      height: 200px;
-    }
+@mixin starShape() {
+  width: 150px;
+  height: 150px;
+  background: hsl(0, 0%, 81%);
+  border-radius: 50%;
+  box-shadow: 0px 0px 50px #a0a098;
+
+  @media (min-width: $breakpointMd) {
+    width: 200px;
+    height: 200px;
+  }
 }
+
 @mixin fadeIn() {
-    animation: fadeIn 5s ease-in-out 0s forwards;
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }    
-}
-@mixin fadeOut() {
-    animation: fadeOut 5s ease-in-out 0s forwards;
-    @keyframes fadeOut {
-      0% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-      }
+  animation: fadeIn 5s ease-in-out 0s forwards;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
     }
+
+    100% {
+      opacity: 1;
+    }
+  }
 }
+
+@mixin fadeOut() {
+  animation: fadeOut 5s ease-in-out 0s forwards;
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
 @mixin moving-up($ms, $stop) {
-    animation: moveUp $ms cubic-bezier(.34, .38, .72, .69) 0s infinite;
-    @keyframes moveUp {
-        0% {
-          margin-top: 0;
-        }
-      
-        100% {
-          margin-top: $stop; // Giá trị này phải tương đương với max range of top property (see randomTop())
-        }
-      }    
+  animation: moveUp $ms cubic-bezier(.34, .38, .72, .69) 0s infinite;
+
+  @keyframes moveUp {
+    0% {
+      margin-top: 0;
+    }
+
+    100% {
+      margin-top: $stop; // Giá trị này phải tương đương với max range of top property (see randomTop())
+    }
+  }
 }
 
 @mixin disappearing($ms) {
-    animation: disappearing $ms ease-in-out 0s forwards;
-    @keyframes disappearing {
-      0% {
-        transform: scale(100%);
-      }
-  
-      100% {
-        transform: scale(0);
-      }
+  animation: disappearing $ms ease-in-out 0s forwards;
+
+  @keyframes disappearing {
+    0% {
+      transform: scale(100%);
     }
+
+    100% {
+      transform: scale(0);
+    }
+  }
+}
+
+@mixin onHover() {
+  transition: all 0.5s ease-in-out 0s;
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 1;
+  }
 }

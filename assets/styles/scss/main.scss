@@ -10,13 +10,11 @@ body {
   background: #262629;
   height: 100vh;
   overflow: hidden;
-
-  #main {
+  main {
     @include flex-center(column);
     position: relative;
     width: 100vw;
     height: 100vh;
-
     #section1,
     #section2,
     #section3 {
@@ -24,11 +22,9 @@ body {
       text-align: center;
       padding: 20px;
     }
-
     #section1 {
       position: absolute;
     }
-
     #section2 {
       @include flex-center(column);
       position: absolute;
@@ -43,7 +39,6 @@ body {
     text-align: center;
     text-transform: uppercase;
   }
-
   .app-desc {
     font-size: 60%;
     text-align: center;
@@ -54,7 +49,6 @@ body {
 #section2 {
   opacity: 0;
   display: none;
-
   #healingWords {
     color: white;
     font-weight: 600;
@@ -64,7 +58,6 @@ body {
 
   #spaceStar {
     margin: 30px 0;
-
     #spaceStarShape {
       @include flex-center(row);
       @include starShape();
@@ -88,12 +81,10 @@ body {
       padding: 20px;
       width: 100%;
     }
-
     input::placeholder {
       color: black;
       font-weight: 600;
     }
-
     button[type="submit"] {
       border-radius: 0 0 10px 10px;
       text-transform: uppercase;
