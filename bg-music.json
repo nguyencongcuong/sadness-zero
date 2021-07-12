@@ -8,5 +8,30 @@
         "name": "Relaxing Corporate Ambient",
         "author": "Someone",
         "url": "./assets/music/pixelbay-relaxing-corporate-ambient.mp3"
+    },
+    {
+        "name": "Celestial",
+        "author": "Relaxing New Age Music",
+        "url": "./assets/music/celestial.mp3"
+    },
+    {
+        "name": "Manifestation",
+        "author": "Elenniyah",
+        "url": "./assets/music/manifestation-Elenniyah.mp3"
+    },
+    {
+        "name": "Pomona",
+        "author": "Relaxing New Age Music",
+        "url": "./assets/music/pomona.mp3"
+    },
+    {
+        "name": "The Healing Pool",
+        "author": "Paul Landry",
+        "url": "./assets/music/the-healing-pool-Paul-Landry.mp3"
+    },
+    {
+        "name": "Tranquil Sky",
+        "author": "Astralla",
+        "url": "./assets/music/tranquil-sky-Astralla.mp3"
     }
 ]

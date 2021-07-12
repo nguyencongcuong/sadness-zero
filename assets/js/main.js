@@ -168,7 +168,8 @@ function playLoopAudio() {
         return response.json();
     })
     .then(function (data) {
-        randomAudioIndex = getRandomInt(2, 0);
+        let audioAPILength = data.length;
+        randomAudioIndex = getRandomInt(audioAPILength, 0);
         music = new Audio(data[randomAudioIndex].url);
 
         let audioName = getID("outroAudioName");
