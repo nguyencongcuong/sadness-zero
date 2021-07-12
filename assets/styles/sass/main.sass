@@ -71,11 +71,16 @@ main
         @include fadeIn()        
     &__words
         position: fixed
-        top: 2%
+        top: 5%
+        left: 5%
+        right: 5%
+        @media screen and ( min-width: $breakpointMd )
+            left: 30%
+            right: 30%
+
         color: white
         font-weight: 600
         text-align: center
-        padding: 50px
     &__words--fadeIn
         @include fadeIn()        
     &__words--fadeOut
@@ -95,7 +100,13 @@ main
         @include disappearing(60s)
     &__input
         position: fixed
+        left: 5%
+        right: 5%
         bottom: 5%
+        @media screen and ( min-width: $breakpointMd )
+            left: 35%
+            right: 35%
+            
         > input, > button
             color: gray
             border: none

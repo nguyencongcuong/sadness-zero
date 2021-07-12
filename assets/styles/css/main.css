@@ -182,11 +182,18 @@ main {
 }
 .healing__words {
   position: fixed;
-  top: 2%;
+  top: 5%;
+  left: 5%;
+  right: 5%;
   color: white;
   font-weight: 600;
   text-align: center;
-  padding: 50px;
+}
+@media screen and (min-width: 768px) {
+  .healing__words {
+    left: 30%;
+    right: 30%;
+  }
 }
 .healing__words--fadeIn {
   animation: fadeIn 5s ease-in-out 0s forwards;
@@ -233,7 +240,15 @@ main {
 }
 .healing__input {
   position: fixed;
+  left: 5%;
+  right: 5%;
   bottom: 5%;
+}
+@media screen and (min-width: 768px) {
+  .healing__input {
+    left: 35%;
+    right: 35%;
+  }
 }
 .healing__input > input, .healing__input > button {
   color: gray;
