@@ -18,7 +18,7 @@ flowingSection1();
 
 // After click #submitBtn
 document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("submitBtn").addEventListener("click", function(event){
+    document.getElementById("submitBtn").addEventListener("click", function (event) {
         event.preventDefault();
 
         // Show & hide #section2 (healing)
@@ -29,22 +29,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Save input value to local storage
         const addSad = () => {
-            
+
             let sad = {
                 time: Date.now(),
                 text: document.getElementById("thoughtsInput").value
             }
-            
+
             sadThings.push(sad);
             document.forms[0].reset();
 
-            console.warn("added", {sadThings});
-            
+            console.warn("added", {
+                sadThings
+            });
+
             // Saving to local storage
             localStorage.setItem("MySadList", JSON.stringify(sadThings));
         }
         addSad();
-        
+
     }, false);
 });
 
@@ -66,7 +68,7 @@ function flowingSection3() {
 }
 
 function flowingSection2() {
-    
+
     // Variables
     let healingWords = getID("healingWords");
     let spaceStar = getID("spaceStar");
@@ -91,10 +93,10 @@ function flowingSection2() {
         "nó có thể biến mất hoàn toàn trong vũ trụ một cách dễ dàng",
         "vậy đó, hãy tích cực lên vào sống tốt hơn mỗi ngày bạn nhé!"
     ]
-    
+
     // Play background music
     playLoopAudio();
-    
+
     // Hide #sharingField
     sharingField.style.display = "none";
 
@@ -104,10 +106,10 @@ function flowingSection2() {
 
     // Based on healingWordList.length, caculate showing time for each healing words in 60s
     let timeToWait = 60000 / healingWordList.length;
-    
+
     // Execute in order
     let wait = async () => {
-        
+
         // Make #spaceStar disappear gradually in 60s
         spaceStar.classList.add("healing__star--disappear");
 
@@ -145,7 +147,7 @@ function flowingSection1() {
 }
 
 function playLoopAudio() {
-    
+
     // Variables
     let music;
     let randomAudioIndex;
@@ -153,32 +155,32 @@ function playLoopAudio() {
 
     // Fetch audios from API
     fetch("./bg-music.json")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (audioList) {
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (audioList) {
 
-        // Choose an random audio file
-        randomAudioIndex = randomRange(audioList.length - 1, 0);
-        music = new Audio(audioList[randomAudioIndex].url);
-        
-        // Assign the audio name to HTML element
-        audioName.innerText = `${audioList[randomAudioIndex].name}`;
-        
-        // Loop audio
-        if (typeof music.loop == 'boolean') {
-            music.loop = true;
-        } else {
-            music.addEventListener('ended', function () {
-                this.currentTime = 0;
-                this.play();
-            }, false);
-        }
-        
-        // Play audio
-        music.play();
-        console.log("Bạn đang nghe bản nhạc " + audioList[randomAudioIndex].name + " từ " + audioList[randomAudioIndex].author);
-    });    
+            // Choose an random audio file
+            randomAudioIndex = randomRange(audioList.length - 1, 0);
+            music = new Audio(audioList[randomAudioIndex].url);
+
+            // Assign the audio name to HTML element
+            audioName.innerText = `${audioList[randomAudioIndex].name}`;
+
+            // Loop audio
+            if (typeof music.loop == 'boolean') {
+                music.loop = true;
+            } else {
+                music.addEventListener('ended', function () {
+                    this.currentTime = 0;
+                    this.play();
+                }, false);
+            }
+
+            // Play audio
+            music.play();
+            console.log("Bạn đang nghe bản nhạc " + audioList[randomAudioIndex].name + " từ " + audioList[randomAudioIndex].author);
+        });
 }
 
 function creatingStars(num) {
