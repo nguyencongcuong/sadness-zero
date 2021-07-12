@@ -1,0 +1,443 @@
+[
+    {
+        "id": 1,
+        "latin": "Andromeda",
+        "vietnamese": "Tiên Nữ"
+    },
+    {
+        "id": 2,
+        "latin": "Antlia",
+        "vietnamese": "Tức Đồng"
+    },
+    {
+        "id": 3,
+        "latin": "Apus",
+        "vietnamese": "Thiên Yến"
+    },
+    {
+        "id": 4,
+        "latin": "Aquarius",
+        "vietnamese": "Bảo Bình"
+    },
+    {
+        "id": 5,
+        "latin": "Aquila",
+        "vietnamese": "Thiên Ưng"
+    },
+    {
+        "id": 6,
+        "latin": "Ara",
+        "vietnamese": "Thiên Đàn"
+    },
+    {
+        "id": 7,
+        "latin": "Aries",
+        "vietnamese": "Bạch Dương"
+    },
+    {
+        "id": 8,
+        "latin": "Auriga",
+        "vietnamese": "Ngự Phu"
+    },
+    {
+        "id": 9,
+        "latin": "Boötes",
+        "vietnamese": "Mục Phu"
+    },
+    {
+        "id": 10,
+        "latin": "Caelum",
+        "vietnamese": "Điêu Cụ"
+    },
+    {
+        "id": 11,
+        "latin": "Camelopardalis",
+        "vietnamese": "Lộc Báo"
+    },
+    {
+        "id": 12,
+        "latin": "Cancer",
+        "vietnamese": "Cự Giải"
+    },
+    {
+        "id": 13,
+        "latin": "Canes Venatici",
+        "vietnamese": "Lạp Khuyển"
+    },
+    {
+        "id": 14,
+        "latin": "Canis Major",
+        "vietnamese": "Đại Khuyển"
+    },
+    {
+        "id": 15,
+        "latin": "Canis Minor",
+        "vietnamese": "Tiểu Khuyển"
+    },
+    {
+        "id": 16,
+        "latin": "Capricornus",
+        "vietnamese": "Ma Kết"
+    },
+    {
+        "id": 17,
+        "latin": "Carina",
+        "vietnamese": "Thuyền Để"
+    },
+    {
+        "id": 18,
+        "latin": "Cassiopeia",
+        "vietnamese": "Tiên Hậu"
+    },
+    {
+        "id": 19,
+        "latin": "Centaurus",
+        "vietnamese": "Bán Nhân Mã"
+    },
+    {
+        "id": 20,
+        "latin": "Cepheus",
+        "vietnamese": "Tiên Vương"
+    },
+    {
+        "id": 21,
+        "latin": "Cetus",
+        "vietnamese": "Kình Ngư"
+    },
+    {
+        "id": 22,
+        "latin": "Chamaeleon",
+        "vietnamese": "Yển Đình"
+    },
+    {
+        "id": 23,
+        "latin": "Circinus",
+        "vietnamese": "Viên Quy"
+    },
+    {
+        "id": 24,
+        "latin": "Columba",
+        "vietnamese": "Thiên Cáp"
+    },
+    {
+        "id": 25,
+        "latin": "Coma Berenices",
+        "vietnamese": "Hậu Phát"
+    },
+    {
+        "id": 26,
+        "latin": "Corona Australis",
+        "vietnamese": "Nam Miện"
+    },
+    {
+        "id": 27,
+        "latin": "Corona Borealis",
+        "vietnamese": "Bắc Miện"
+    },
+    {
+        "id": 28,
+        "latin": "Corvus",
+        "vietnamese": "Ô Nha"
+    },
+    {
+        "id": 29,
+        "latin": "Crater",
+        "vietnamese": "Cự Tước"
+    },
+    {
+        "id": 30,
+        "latin": "Crux",
+        "vietnamese": "Nam Thập"
+    },
+    {
+        "id": 31,
+        "latin": "Cygnus",
+        "vietnamese": "Thiên Nga"
+    },
+    {
+        "id": 32,
+        "latin": "Delphinus",
+        "vietnamese": "Hải Đồn"
+    },
+    {
+        "id": 33,
+        "latin": "Dorado",
+        "vietnamese": "Kiếm Ngư"
+    },
+    {
+        "id": 34,
+        "latin": "Draco",
+        "vietnamese": "Thiên Long"
+    },
+    {
+        "id": 35,
+        "latin": "Equuleus",
+        "vietnamese": "Tiểu Mã"
+    },
+    {
+        "id": 36,
+        "latin": "Eridanus",
+        "vietnamese": "Ba Giang"
+    },
+    {
+        "id": 37,
+        "latin": "Fornax",
+        "vietnamese": "Thiên Lô"
+    },
+    {
+        "id": 38,
+        "latin": "Gemini",
+        "vietnamese": "Song Tử"
+    },
+    {
+        "id": 39,
+        "latin": "Grus",
+        "vietnamese": "Thiên Hạc"
+    },
+    {
+        "id": 40,
+        "latin": "Hercules",
+        "vietnamese": "Vũ Tiên"
+    },
+    {
+        "id": 41,
+        "latin": "Horologium",
+        "vietnamese": "Thời Chung"
+    },
+    {
+        "id": 42,
+        "latin": "Hydra",
+        "vietnamese": "Trường Xà"
+    },
+    {
+        "id": 43,
+        "latin": "Hydrus",
+        "vietnamese": "Thủy Xà"
+    },
+    {
+        "id": 44,
+        "latin": "Indus",
+        "vietnamese": "Ấn Đệ An"
+    },
+    {
+        "id": 45,
+        "latin": "Lacerta",
+        "vietnamese": "Hiết Hổ"
+    },
+    {
+        "id": 46,
+        "latin": "Leo",
+        "vietnamese": "Sư Tử"
+    },
+    {
+        "id": 47,
+        "latin": "Leo Minor",
+        "vietnamese": "Tiểu Sư"
+    },
+    {
+        "id": 48,
+        "latin": "Lepus",
+        "vietnamese": "Thiên Thổ"
+    },
+    {
+        "id": 49,
+        "latin": "Libra",
+        "vietnamese": "Thiên Bình"
+    },
+    {
+        "id": 50,
+        "latin": "Lupus",
+        "vietnamese": "Sài Lang"
+    },
+    {
+        "id": 51,
+        "latin": "Lynx",
+        "vietnamese": "Thiên Miêu"
+    },
+    {
+        "id": 52,
+        "latin": "Lyra",
+        "vietnamese": "Thiên Cầm"
+    },
+    {
+        "id": 53,
+        "latin": "Mensa",
+        "vietnamese": "Sơn Án"
+    },
+    {
+        "id": 54,
+        "latin": "Microscopium",
+        "vietnamese": "Hiển Vi Kính"
+    },
+    {
+        "id": 55,
+        "latin": "Monoceros",
+        "vietnamese": "Kỳ Lân"
+    },
+    {
+        "id": 56,
+        "latin": "Musca",
+        "vietnamese": "Thương Dăng"
+    },
+    {
+        "id": 57,
+        "latin": "Norma",
+        "vietnamese": "Củ Xích"
+    },
+    {
+        "id": 58,
+        "latin": "Octans",
+        "vietnamese": "Bát Phân Nghi"
+    },
+    {
+        "id": 59,
+        "latin": "Ophiuchus",
+        "vietnamese": "Xà Phu"
+    },
+    {
+        "id": 60,
+        "latin": "Orion",
+        "vietnamese": "Lạp Hộ"
+    },
+    {
+        "id": 61,
+        "latin": "Pavo",
+        "vietnamese": "Khổng Tước"
+    },
+    {
+        "id": 62,
+        "latin": "Pegasus",
+        "vietnamese": "Thiên Mã"
+    },
+    {
+        "id": 63,
+        "latin": "Perseus",
+        "vietnamese": "Anh Tiên"
+    },
+    {
+        "id": 64,
+        "latin": "Phoenix",
+        "vietnamese": "Phượng Hoàng"
+    },
+    {
+        "id": 65,
+        "latin": "Pictor",
+        "vietnamese": "Hồi Giá"
+    },
+    {
+        "id": 66,
+        "latin": "Pisces",
+        "vietnamese": "Song Ngư"
+    },
+    {
+        "id": 67,
+        "latin": "Piscis Austrinus",
+        "vietnamese": "Nam Ngư"
+    },
+    {
+        "id": 68,
+        "latin": "Puppis",
+        "vietnamese": "Thuyền Vĩ"
+    },
+    {
+        "id": 69,
+        "latin": "Pyxis",
+        "vietnamese": "La Bàn"
+    },
+    {
+        "id": 70,
+        "latin": "Reticulum",
+        "vietnamese": "Võng Cổ"
+    },
+    {
+        "id": 71,
+        "latin": "Sagitta",
+        "vietnamese": "Thiên Tiễn"
+    },
+    {
+        "id": 72,
+        "latin": "Sagittarius",
+        "vietnamese": "Cung Thủ"
+    },
+    {
+        "id": 73,
+        "latin": "Scorpius",
+        "vietnamese": "Thiên Yết"
+    },
+    {
+        "id": 74,
+        "latin": "Sculptor",
+        "vietnamese": "Ngọc Phu"
+    },
+    {
+        "id": 75,
+        "latin": "Scutum",
+        "vietnamese": "Thuẫn Bài"
+    },
+    {
+        "id": 76,
+        "latin": "Serpens",
+        "vietnamese": "Cự Xà"
+    },
+    {
+        "id": 77,
+        "latin": "Sextans",
+        "vietnamese": "Lục Phân Nghi"
+    },
+    {
+        "id": 78,
+        "latin": "Taurus",
+        "vietnamese": "Kim Ngưu"
+    },
+    {
+        "id": 79,
+        "latin": "Telescopium",
+        "vietnamese": "Viễn Vọng Kính"
+    },
+    {
+        "id": 80,
+        "latin": "Triangulum",
+        "vietnamese": "Tam Giác"
+    },
+    {
+        "id": 81,
+        "latin": "Triangulum Australe",
+        "vietnamese": "Nam Tam Giác"
+    },
+    {
+        "id": 82,
+        "latin": "Tucana",
+        "vietnamese": "Đỗ Quyên"
+    },
+    {
+        "id": 83,
+        "latin": "Ursa Major",
+        "vietnamese": "Đại Hùng"
+    },
+    {
+        "id": 84,
+        "latin": "Ursa Minor",
+        "vietnamese": "Tiểu Hùng"
+    },
+    {
+        "id": 85,
+        "latin": "Vela",
+        "vietnamese": "Thuyền Phàm"
+    },
+    {
+        "id": 86,
+        "latin": "Virgo",
+        "vietnamese": "Xử Nữ"
+    },
+    {
+        "id": 87,
+        "latin": "Volans",
+        "vietnamese": "Phi Ngư"
+    },
+    {
+        "id": 88,
+        "latin": "Vulpecula",
+        "vietnamese": "Hồ Ly"
+    }
+
+]

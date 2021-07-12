@@ -13,6 +13,18 @@ section3.style.display = "none";
 // Create & animate a space of stars
 positioningStars(creatingStars(500));
 
+// Generate Planet name
+fetch("./constellation.json")
+.then(function (response) {
+    return response.json();
+})
+.then(function (planetList) {
+    let randomPlanetIndex = randomRange(planetList.length - 1, 0);
+    let submitBtn = getID("submitBtn");
+    submitBtn.innerHTML = `Đặt lên chòm sao<br><b>${planetList[randomPlanetIndex].vietnamese} (${planetList[randomPlanetIndex].latin})</b>`;
+});
+
+
 // Show & hide #section1 (intro)
 flowingSection1();
 

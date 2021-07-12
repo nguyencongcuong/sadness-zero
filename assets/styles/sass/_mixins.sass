@@ -47,6 +47,13 @@
     animation: disappearing $ms ease-in-out 0s forwards
     @keyframes disappearing
         0%
+            margin-top: 0
             transform: scale(100%)
+        80%
+            margin-top: 0
+            transform: scale(10%)
+        90%
+            margin-top: -50vh
         100%
-            transform: scale(0)
+            transform: scale(2%)
+            margin-top: -200vh
