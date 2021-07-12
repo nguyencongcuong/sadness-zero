@@ -20,6 +20,13 @@ flowingSection1();
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("submitBtn").addEventListener("click", function(event){
         event.preventDefault();
+
+        // Show & hide #section2 (healing)
+        flowingSection2();
+
+        // Show & hide #section3 (Outro)
+        flowingSection3();
+
         // Save input value to local storage
         const addSad = () => {
             
@@ -38,12 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         addSad();
         
-        // Show & hide #section2 (healing)
-        flowingSection2();
-
-        // Show & hide #section3 (Outro)
-        flowingSection3();
-
     }, false);
 });
 
