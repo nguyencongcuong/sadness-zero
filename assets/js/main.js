@@ -97,7 +97,7 @@ sectionFade();
 let healingWords = getID("healingWords");
 let spaceStar = getID("spaceStar");
 let spaceStarShape = getID("spaceStarShape");
-let thoughts = getID("thoughts")
+let thoughts = getID("thoughts");
 
 let inputValue = "";
 let submitBtn = getID("submitBtn");
