@@ -27,3 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }, false);
 });
+
+document.getElementsByTagName("button").addEventListener("click", function(){
+    console.log("I love you");
+}, false);
