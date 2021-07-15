@@ -1,7 +1,15 @@
 // GLOBAL FUNCTIONS
 const randomRange = (max, min) => Math.floor(Math.random() * (max - min + 1) + min);
 const delay = ms => new Promise(res => setTimeout(res, ms));
-
+const fetch = (url, func) => {
+    fetch(url)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (arr) {
+        func(arr);
+    });    
+}
 // 1. CREATE ANIMATED STAR BACKGROUND
 const starList = num => {
 
@@ -36,26 +44,22 @@ const starList = num => {
     // Return an array of all stars created
     return starList;
 }
-const randomPosition = list => {
-    for (let i = 0; i < list.length; i++) {
+const randomizePosition = arr => {
+    for (let i = 0; i < arr.length; i++) {
         let top = randomRange(500, 100);
         let left = randomRange(100, 0);
-        list[i].style.top = `${top}%`;
-        list[i].style.left = `${left}%`;
+        arr[i].style.top = `${top}%`;
+        arr[i].style.left = `${left}%`;
     }
 }
-randomPosition(starList(300));
+randomizePosition(starList(300));
 
 // 2. GENERATE RANDOM PLANET'S NAME
-fetch("./constellation.json")
-.then(function (response) {
-    return response.json();
-})
-.then(function (planetList) {
-    let randomPlanetIndex = randomRange(planetList.length - 1, 0);
-    let submitBtn = document.getElementById("submitBtn");
-    submitBtn.innerHTML = `Đặt lên chòm sao ${planetList[randomPlanetIndex].vietnamese} (${planetList[randomPlanetIndex].latin})`;
-});
+const planetName = (arr) => {
+    let index = randomRange(arr.length - 1, 0);
+    document.getElementById("submitBtn").innerHTML = `Đặt lên chòm sao ${arr[index].vietnamese} (${arr[index].latin})`;
+}
+fetch("./constellation.json", planetName);
 
 // 3. HEALING FLOWS
 // 3.1 Intro
@@ -74,7 +78,7 @@ const intro = () => {
     }
     wait();
 }
-const healingProcess = () => {
+const process = () => {
 
     // Variables
     let healingWords = document.getElementById("healingWords");
@@ -145,7 +149,7 @@ const outro = () => {
     }
     wait();
 }
-const playLoopAudio = () => {
+const audio = () => {
 
     // Variables
     let music;
@@ -185,7 +189,7 @@ const playLoopAudio = () => {
 intro();
 document.getElementById("submitBtn").addEventListener("click", function (event) {
     event.preventDefault(); // Prevent broswer from reload after click
-    playLoopAudio();
-    healingProcess();
+    audio();
+    process();
     outro();
 }, false);
