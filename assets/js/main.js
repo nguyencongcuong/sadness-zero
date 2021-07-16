@@ -1,7 +1,7 @@
 // GLOBAL FUNCTIONS
 const randomRange = (max, min) => Math.floor(Math.random() * (max - min + 1) + min);
 const delay = ms => new Promise(res => setTimeout(res, ms));
-const fetch = (url, func) => {
+const fetchQuotes = (url, func) => {
     fetch(url)
     .then(function (response) {
         return response.json();
@@ -59,7 +59,7 @@ const planetName = (arr) => {
     let index = randomRange(arr.length - 1, 0);
     document.getElementById("submitBtn").innerHTML = `Đặt lên chòm sao ${arr[index].vietnamese} (${arr[index].latin})`;
 }
-fetch("./constellation.json", planetName);
+fetchQuotes("./constellation.json", planetName);
 
 // 3. HEALING FLOWS
 // 3.1 Intro
