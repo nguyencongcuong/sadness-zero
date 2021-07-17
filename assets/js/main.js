@@ -88,21 +88,19 @@ const process = () => {
     let input = document.getElementById("thoughtsInput");
     let inputValue = "";
     let healingWordList = [
-        "bạn hãy thư giãn và thả lỏng cơ thể",
-        "hít thật sâu...",
-        "... rồi sau đó thở ra",
-        "khi bạn ổn, mọi thứ xung quanh bạn sẽ ổn...",
-        "... bạn sẽ nhận ra rằng cuộc sống này đẹp hơn bạn từng nghĩ",
-        "và luôn có những niềm vui, những điều tốt đẹp đợi chờ bạn phía trước",
-        "vũ trụ của chúng ta rộng hơn 93 tỷ năm ánh sáng",
-        "bầu trời rộng lớn mà bạn nhìn thấy mỗi ngày thực ra lại rất nhỏ bé",
-        "mặt trời nhỏ hơn thế",
-        "và trái đất lại nhỏ nhỏ hơn thế nữa",
-        "so với thiên hà, thành phố của chúng ta chỉ như 1 hạt bụi",
-        "còn chúng ta chỉ cỡ như 1 tế bào",
-        "giờ thì bạn thấy suy nghĩ tiêu cực của mình nhỏ bé cỡ nào rồi chứ?",
-        "nó có thể biến mất hoàn toàn trong vũ trụ một cách dễ dàng",
-        "vậy đó, hãy tích cực lên vào sống tốt hơn mỗi ngày bạn nhé!"
+        "Bạn ơi, hãy thư giãn và thả lỏng cơ thể...",
+        "hít một hơi thật sâu... rồi sau đó thở ra.",
+        "Bầu trời có lúc mưa, lúc đen xì vì bão tố...",
+        "nhưng cuối cùng, trời lại quang mây lại tạnh.",
+        "Cuộc sống của bạn cũng vậy...",
+        "Dù hiện bạn đang buồn thế nào thì nó đều trở về hình hài tốt đẹp vốn dĩ.",
+        "Vũ trụ rộng hơn 93 tỷ năm ánh sáng.",
+        "Bầu trời mênh mông, nhưng so với vũ trụ lại cực kỳ nhỏ bé.",
+        "Trái đất nơi bạn ở, lại còn nhỏ hơn thế nữa.",
+        "Những thành phố lớn nhất chỉ như 1 hạt bụi khi so với vũ trụ.",
+        "Còn bạn, chỉ cỡ như 1 tế bào.",
+        "Nỗi buồn trong bạn nhỏ bé đến nỗi...",
+        "Nó có thể tan biến trong không gian một cách dễ dàng..."
     ]
 
     // Hide #sharingField
@@ -154,7 +152,6 @@ const audio = () => {
     // Variables
     let music;
     let randomAudioIndex;
-    let audioName = document.getElementById("outroAudioName");
 
     // Fetch audios from API
     fetch("./bg-music.json")
@@ -162,14 +159,9 @@ const audio = () => {
             return response.json();
         })
         .then(function (audioList) {
-
             // Choose an random audio file
             randomAudioIndex = randomRange(audioList.length - 1, 0);
             music = new Audio(audioList[randomAudioIndex].url);
-
-            // Assign the audio name to HTML element
-            audioName.innerText = `${audioList[randomAudioIndex].name}`;
-
             // Loop audio
             if (typeof music.loop == 'boolean') {
                 music.loop = true;
@@ -179,7 +171,6 @@ const audio = () => {
                     this.play();
                 }, false);
             }
-
             // Play audio
             music.play();
             console.log("Bạn đang nghe bản nhạc " + audioList[randomAudioIndex].name + " (" + audioList[randomAudioIndex].author + ")");

@@ -211,8 +211,8 @@ main #section3 {
 }
 @media screen and (min-width: 768px) {
   .healing__words {
-    left: 35vw;
-    right: 35vw;
+    left: 20vw;
+    right: 20vw;
   }
 }
 .healing__words--fadeIn {
@@ -222,7 +222,7 @@ main #section3 {
   animation: fadeOut 3s ease-in-out 0s forwards;
 }
 .healing__star {
-  margin: 30px 0;
+  margin: 0 0 30px 0;
 }
 .healing__star__shape {
   display: flex;
@@ -234,12 +234,6 @@ main #section3 {
   background: #f2f2f2;
   border-radius: 50%;
   box-shadow: 0px 0px 50px #a0a098;
-}
-@media (min-width: 768px) {
-  .healing__star__shape {
-    width: 200px;
-    height: 200px;
-  }
 }
 .healing__star__shape .sadly-words {
   color: #333333;
