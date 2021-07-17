@@ -70,28 +70,22 @@ html a {
     opacity: 0;
   }
 }
-body {
-  color: white;
-  background: #262629;
-  height: 100vh;
-  overflow: hidden;
-}
-
 main {
   display: grid;
-  grid-template-columns: 5% 90% 5%;
+  grid-template-columns: 5vw 90vw 5vw;
   grid-template-rows: 100%;
   justify-content: center;
   align-items: center;
+  background: #262629;
+  color: white;
   position: relative;
-  top: 0;
-  bottom: 0;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 @media (min-width: 640px) {
   main {
-    grid-template-columns: 20% 60% 20%;
+    grid-template-columns: 20vw 60vw 20vw;
   }
 }
 main #section1 {
