@@ -8,7 +8,7 @@ const fetchData = (url, func) => {
     })
     .then(function (arr) {
         func(arr);
-    });    
+    });
 }
 // 1. CREATE ANIMATED STAR BACKGROUND
 const starList = num => {
@@ -52,7 +52,7 @@ const randomizePosition = arr => {
         arr[i].style.left = `${left}%`;
     }
 }
-randomizePosition(starList(300));
+randomizePosition(starList(100));
 
 // 2. GENERATE RANDOM PLANET'S NAME
 const planetName = (arr) => {
