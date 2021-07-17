@@ -47,7 +47,7 @@ const starList = num => {
 const randomizePosition = arr => {
     for (let i = 0; i < arr.length; i++) {
         let top = randomRange(500, 100);
-        let left = randomRange(100, 0);
+        let left = randomRange(95, 5);
         arr[i].style.top = `${top}%`;
         arr[i].style.left = `${left}%`;
     }
