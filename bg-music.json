@@ -1,37 +1,32 @@
 [
     {
-        "name": "Night Life",
-        "author": "Michael Kobrin",
-        "url": "./assets/music/pixelbay-nightlife-michael-kobrin.mp3"
+        "name": "Lọ Thuốc Lãng Quên (Forgetfullness Potion)",
+        "author": "Nguyễn Văn Chung",
+        "url": "./assets/music/forgetfullness-potion.mp3"
     },
     {
-        "name": "Relaxing Corporate Ambient",
-        "author": "Someone",
-        "url": "./assets/music/pixelbay-relaxing-corporate-ambient.mp3"
+        "name": "Phép Thuật Chữa Lành (Healing Spell)",
+        "author": "Nguyễn Văn Chung",
+        "url": "./assets/music/healing-spell.mp3"
     },
     {
-        "name": "Celestial",
-        "author": "Relaxing New Age Music",
-        "url": "./assets/music/celestial.mp3"
+        "name": "Giấc Ngủ Ngon (Sleep Chant)",
+        "author": "Nguyễn Văn Chung",
+        "url": "./assets/music/sleep-chant.mp3"
     },
     {
-        "name": "Manifestation",
-        "author": "Elenniyah",
-        "url": "./assets/music/manifestation-Elenniyah.mp3"
+        "name": "Thanh Lọc (Purification)",
+        "author": "Nguyễn Văn Chung",
+        "url": "./assets/music/purification.mp3"
     },
     {
-        "name": "Pomona",
-        "author": "Relaxing New Age Music",
-        "url": "./assets/music/pomona.mp3"
+        "name": "Lời Chúc Buổi Sáng (Morning Blessings)",
+        "author": "Nguyễn Văn Chung",
+        "url": "./assets/music/morning-blessings.mp3"
     },
     {
-        "name": "The Healing Pool",
-        "author": "Paul Landry",
-        "url": "./assets/music/the-healing-pool-Paul-Landry.mp3"
-    },
-    {
-        "name": "Tranquil Sky",
-        "author": "Astralla",
-        "url": "./assets/music/tranquil-sky-Astralla.mp3"
+        "name": "Một Khởi Đầu Mới (A New Beginning)",
+        "author": "Nguyễn Văn Chung",
+        "url": "./assets/music/a-new-beginning.mp3"
     }
 ]

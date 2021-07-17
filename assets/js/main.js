@@ -173,7 +173,7 @@ const audio = () => {
             }
             // Play audio
             music.play();
-            console.log("Bạn đang nghe bản nhạc " + audioList[randomAudioIndex].name + " (" + audioList[randomAudioIndex].author + ")");
+            console.log("Bạn đang nghe bản nhạc " + audioList[randomAudioIndex].name + " - " + audioList[randomAudioIndex].author);
         });
 }
 
