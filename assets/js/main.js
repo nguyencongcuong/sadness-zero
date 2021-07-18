@@ -59,7 +59,7 @@ const planetName = (arr) => {
     let index = randomRange(arr.length - 1, 0);
     document.getElementById("submitBtn").innerHTML = `Đặt lên chòm sao ${arr[index].vietnamese} (${arr[index].latin})`;
 }
-fetchData("./constellation.json", planetName);
+fetchData("./assets/json/constellation.json", planetName);
 
 // 3. HEALING FLOWS
 // 3.1 Intro
@@ -154,7 +154,7 @@ const audio = () => {
     let randomAudioIndex;
 
     // Fetch audios from API
-    fetch("./bg-music.json")
+    fetch("./assets/json/bg-music.json")
         .then(function (response) {
             return response.json();
         })
